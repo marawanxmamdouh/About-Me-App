@@ -18,14 +18,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.myNameXML = object1 // [2]
 
-        binding.btn.setOnClickListener {
-            object1.nickname = binding.etNickname.text.toString() // [1]
-            // Invalidate all binding expressions and request a new rebind to refresh UI
-            binding.invalidateAll() // [2]
-            binding.etNickname.visibility = View.GONE
-            binding.btn.visibility = View.GONE
-            binding.tvNickname.visibility = View.VISIBLE
-            hideKeyboard(it)
+        binding.apply {
+            btn.setOnClickListener {
+                object1.nickname = etNickname.text.toString() // [1]
+                // Invalidate all binding expressions and request a new rebind to refresh UI
+                invalidateAll() // [2]
+                etNickname.visibility = View.GONE
+                btn.visibility = View.GONE
+                tvNickname.visibility = View.VISIBLE
+                hideKeyboard(it)
+            }
         }
     }
 
