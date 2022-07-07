@@ -4,18 +4,22 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import dev.marawanxmamdouh.aboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btn.setOnClickListener {
-            tvNickname.text = etNickname.text
-            etNickname.visibility = View.GONE
-            btn.visibility = View.GONE
-            tvNickname.visibility = View.VISIBLE
+        binding.btn.setOnClickListener {
+            binding.tvNickname.text = binding.etNickname.text
+            binding.etNickname.visibility = View.GONE
+            binding.btn.visibility = View.GONE
+            binding.tvNickname.visibility = View.VISIBLE
             hideKeyboard(it)
         }
     }
