@@ -16,6 +16,13 @@ class MainActivity : AppCompatActivity() {
             etNickname.visibility = View.GONE
             btn.visibility = View.GONE
             tvNickname.visibility = View.VISIBLE
+            hideKeyboard(it)
         }
+    }
+
+    private fun hideKeyboard(view: View) {
+        val inputMethodManager =
+            getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }
