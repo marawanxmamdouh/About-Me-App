@@ -9,14 +9,19 @@ import dev.marawanxmamdouh.aboutme.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val object1: MyName = MyName("Marawan Mamdouh") // [1]
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.myNameXML = object1 // [2]
+
         binding.btn.setOnClickListener {
-            binding.tvNickname.text = binding.etNickname.text
+            object1.nickname = binding.etNickname.text.toString() // [1]
+            // Invalidate all binding expressions and request a new rebind to refresh UI
+            binding.invalidateAll() // [2]
             binding.etNickname.visibility = View.GONE
             binding.btn.visibility = View.GONE
             binding.tvNickname.visibility = View.VISIBLE
