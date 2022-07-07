@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">About Me</string>
+    <string name="marawan_mamdouh">Marawan Mamdouh</string>
+    <string name="yellow_star">Yellow Star</string>
+    <string name="done">Done</string>
+    <string name="bio">- Google Developer Student Club EELU Founder and Lead.\n\n- Microsoft Learn Student Ambassador.\n\n- Google Developer Group Asyut Co-Organizer.\n\n- ITI Student Ambassador.\n\n- Mentor and Co-coach at ICPC EELU Community.\n\n- Student at the Faculty of Computers and Information technology at EELU.</string>
+    <string name="what_is_your_nickname">What is your Nickname?</string>
 </resources>
